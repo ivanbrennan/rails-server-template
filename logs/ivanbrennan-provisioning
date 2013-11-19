@@ -1,0 +1,2387 @@
+Last login: Mon Nov 18 21:19:02 on ttys003
+╭╺[ivan][machinecode] ~/Development/flatiron/code
+╰╺⧉ git clone git@github.com:TalkingQuickly/rails-server-template.git
+Cloning into 'rails-server-template'...
+remote: Counting objects: 104, done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 104 (delta 55), reused 104 (delta 55)
+Receiving objects: 100% (104/104), 13.29 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (55/55), done.
+Checking connectivity... done
+╭╺[ivan][machinecode] ~/Development/flatiron/code
+╰╺⧉ cd rails-server-template
+/Users/ivan/Development/flatiron/code/rails-server-template
+╭╺[ivan][machinecode] (master) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git branch
+* master
+╭╺[ivan][machinecode] (master) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git co -b development
+Switched to a new branch 'development'
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git remote -v
+origin	git@github.com:TalkingQuickly/rails-server-template.git (fetch)
+origin	git@github.com:TalkingQuickly/rails-server-template.git (push)
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git remote remove origin 
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git remote -v
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git remote add origin git@github.com:ivanbrennan/rails-server-template.git
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git st
+# On branch development
+nothing to commit, working directory clean
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ git push -u origin development 
+Counting objects: 104, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (43/43), done.
+Writing objects: 100% (104/104), 13.29 KiB | 0 bytes/s, done.
+Total 104 (delta 55), reused 104 (delta 55)
+To git@github.com:ivanbrennan/rails-server-template.git
+ * [new branch]      development -> development
+Branch development set up to track remote branch development from origin.
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ cp data_bags/users/deploy.json.example data_bags/users/deploy.json
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ openssl passwd -1 "plaintextpassword"
+$1$f6cTNNt0$zK3kp92YMSE6kxg1UOA7j/
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ mvim data_bags/users/deploy.json
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDABjGqcHsTTDjmT30YUZ9VUJMz0cNYFqIRROz/7NVmS79gvIeS4/ll+flOtdgVcsDijjghHqA9AM/4OCv5sKICaufRV73PS4HKk06yfiCS2au5YzIg/jd+7gK5smxpS+55qtR0Yu1hOBrBik0Q2J7biLNpXLqHLnnrrrS5mkgnIRAb7Ojv/CQKT+ZDcusJWsZ7pzxY1BHqC59VNuy79knVbPAE44n6jnIXlfcIACVqmHlU/W6KVvxfkv+lncf2t6SAj3AuWdFD98YuWxN5QlGBPe+If5WwneYUc3ENjiSAJu1sHUYU9BMhe9YEFiCZVzKsv45Lr+1HlA225u447835 ivan.brennan@gmail.com
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ mkdir cookbooks
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ berks install --path ./cookbooks
+Installing build-essential (1.4.2) from git: 'https://github.com/opscode-cookbooks/build-essential' with branch: 'master' at ref: '7f4d351036f10e7b641e1df137390491d6111669'
+Installing sudo (2.2.3) from git: 'https://github.com/opscode-cookbooks/sudo.git' with branch: 'master' at ref: '6a616bcf0c7e26918103bca976064996dcd08350'
+Installing basic-security-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/basic_security-tlq.git' with branch: 'master' at ref: 'b40c3aa3a924903650dc05c9e0a53aaf46e5cc56'
+Installing look-and-feel-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/look_and_feel-tlq.git' with branch: 'master' at ref: 'bf3b58e4233af1455a615f66a61cd104d43415b6'
+Installing users (1.6.1) from git: 'https://github.com/opscode-cookbooks/users.git' with branch: 'master' at ref: 'd5a1a741e15b56c770a037f341495e29ac753e1b'
+Installing chef-solo-search (0.5.1) from git: 'https://github.com/edelight/chef-solo-search' with branch: 'master' at ref: '681f78a108f5f8a3655551b32d9939603628c568'
+Installing memcached-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/memcached-tlq.git' with branch: 'master' at ref: '09d17381e27979ff367f712697d7a53055e3f20c'
+Installing mongo-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/mongo-tlq.git' with branch: 'master' at ref: '9e652de196cac937a1e8e9bc5ccdf2c9422f230e'
+Installing redis-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/redis-tlq.git' with branch: 'master' at ref: 'ae811bf8f8e501338a277f4a80ae793cf17782d7'
+Installing monit_configs-tlq (0.0.4) from git: 'git@github.com:TalkingQuickly/monit_configs-tlq.git' with branch: 'master' at ref: 'd0989ae2315551068900c0bd60fe878d188d8814'
+Installing monit-tlq (0.3.4) from git: 'git@github.com:TalkingQuickly/monit-tlq.git' with branch: 'master' at ref: 'f5b9cbffe004ad40caff2d4758c166ae67363a36'
+Installing rails_gem_dependencies-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/rails_gem_dependencies-tlq.git' with branch: 'master' at ref: '213f5d2ecf1be5d0778414164e84d29166443f44'
+Installing mysql (4.0.1) from git: 'https://github.com/opscode-cookbooks/mysql' with branch: 'master' at ref: 'a8b6a631e9e5c085f461e32a001c77debaa47aa1'
+Installing nginx-tlq (0.0.1) from git: 'git@github.com:TalkingQuickly/nginx-tlq.git' with branch: 'master' at ref: 'f28dbe6d19f161e4a9ec2400b1e87b42ffaa64d3'
+Installing rbenv (0.7.3) from git: 'https://github.com/fnichol/chef-rbenv' with branch: 'master' at ref: '9afb4e5da2e6212504a12de3bbbd410cd96100f6'
+Installing postgresql (3.1.1) from git: 'git@github.com:opscode-cookbooks/postgresql.git' with branch: 'master' at ref: 'd0ae7eff0db5b6fc05411eb5bac6ea1614838da9'
+Using openssl (1.1.0)
+Using ruby_build (0.8.0)
+Using java (1.15.4)
+Using windows (1.11.0)
+Using chef_handler (1.1.4)
+Using aws (1.0.0)
+Using apt (2.3.0)
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ knife solo prepare deploy@162.243.77.181
+-bash: knife: command not found
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ gem install knife-solo
+Fetching: mixlib-config-2.0.0.gem (100%)
+Successfully installed mixlib-config-2.0.0
+Fetching: mixlib-cli-1.3.0.gem (100%)
+Successfully installed mixlib-cli-1.3.0
+Fetching: mixlib-shellout-1.2.0.gem (100%)
+Successfully installed mixlib-shellout-1.2.0
+Fetching: systemu-2.5.2.gem (100%)
+Successfully installed systemu-2.5.2
+Fetching: ipaddress-0.8.0.gem (100%)
+Successfully installed ipaddress-0.8.0
+Fetching: ohai-6.20.0.gem (100%)
+Successfully installed ohai-6.20.0
+Fetching: net-ssh-multi-1.1.gem (100%)
+Successfully installed net-ssh-multi-1.1
+Fetching: moneta-0.6.0.gem (100%)
+Successfully installed moneta-0.6.0
+Fetching: chef-zero-1.7.1.gem (100%)
+Successfully installed chef-zero-1.7.1
+Fetching: puma-1.6.3.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed puma-1.6.3
+Fetching: chef-11.8.0.gem (100%)
+Successfully installed chef-11.8.0
+Fetching: knife-solo-0.4.0.gem (100%)
+Thanks for installing knife-solo!
+
+If you run into any issues please let us know at:
+  https://github.com/matschaffer/knife-solo/issues
+
+If you are upgrading knife-solo please uninstall any old versions by
+running `gem clean knife-solo` to avoid any errors.
+
+See http://bit.ly/CHEF-3255 for more information on the knife bug
+that causes this.
+Successfully installed knife-solo-0.4.0
+12 gems installed
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ knife solo prepare deploy@162.243.77.181
+Bootstrapping Chef...
+Enter the password for deploy@162.243.77.181: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  6790  100  6790    0     0  33313      0 --:--:-- --:--:-- --:--:-- 61171
+
+Downloading Chef 11.8.0 for ubuntu...
+Installing Chef 11.8.0
+Selecting previously unselected package chef.
+(Reading database ... 77010 files and directories currently installed.)
+Unpacking chef (from .../chef_11.8.0_amd64.deb) ...
+Setting up chef (11.8.0-1.ubuntu.12.04) ...
+Thank you for installing Chef!
+Generating node config 'nodes/162.243.77.181.json'...
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ ls
+Berksfile      Readme.md      data_bags      nodes          site-cookbooks
+Berksfile.lock cookbooks      environments   roles
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ ls nodes
+162.243.77.181.json               rails_postgres_redis.json.example
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ mvim nodes/rails_postgres_redis.json.example 
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ mvim nodes/162.243.77.181.json 
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ openssl passwd -1 "plaintextpassword"
+$1$LEfFq4dz$2dPqZL189PndIH2B9GQeb0
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ knife solo cook deploy@162.243.77.181
+Running Chef on 162.243.77.181...
+Checking Chef version...
+Enter the password for deploy@162.243.77.181: 
+WARNING: Berkshelf could not be loaded
+WARNING: Please add the berkshelf gem to your Gemfile or install it manually with `gem install berkshelf`
+Uploading the kitchen...
+Generating solo config...
+Running Chef...
+
+Starting Chef Client, version 11.8.0
+Compiling Cookbooks...
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for service[ssh] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous service[ssh]: /home/deploy/chef-solo/cookbooks-2/basic-security-tlq/recipes/default.rb:59:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  service[ssh]: /home/deploy/chef-solo/cookbooks-2/look-and-feel-tlq/recipes/default.rb:55:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for execute[service monit restart] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit-tlq/recipes/default.rb:39:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/system.rb:8:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Accessing node by the variable @node is deprecated. Support will be removed in a future release.
+[2013-11-18T22:16:03-05:00] WARN: Please update your cookbooks to use node in place of @node. Accessed from:
+[2013-11-18T22:16:03-05:00] WARN: /home/deploy/chef-solo/cookbooks-2/nginx-tlq/recipes/default.rb:26:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: /opt/chef/embedded/lib/ruby/gems/1.9.1/gems/chef-11.8.0/lib/chef/mixin/from_file.rb:30:in `instance_eval'
+[2013-11-18T22:16:03-05:00] WARN: /opt/chef/embedded/lib/ruby/gems/1.9.1/gems/chef-11.8.0/lib/chef/mixin/from_file.rb:30:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: /opt/chef/embedded/lib/ruby/gems/1.9.1/gems/chef-11.8.0/lib/chef/cookbook_version.rb:237:in `load_recipe'
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for execute[service monit restart] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/system.rb:8:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/nginx.rb:8:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for execute[service monit restart] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/nginx.rb:8:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/postgres.rb:8:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for package[curl] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous package[curl]: /home/deploy/chef-solo/cookbooks-2/rails_gem_dependencies-tlq/recipes/default.rb:1:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  package[curl]: /home/deploy/chef-solo/cookbooks-2/ruby_build/recipes/default.rb:34:in `block in from_file'
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for package[git-core] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous package[git-core]: /home/deploy/chef-solo/cookbooks-2/ruby_build/recipes/default.rb:38:in `block in from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  package[git-core]: /home/deploy/chef-solo/cookbooks-2/rbenv/libraries/chef_rbenv_recipe_helpers.rb:43:in `block in install_rbenv_pkg_prereqs'
+[2013-11-18T22:16:03-05:00] WARN: Cloning resource attributes for execute[service monit restart] from prior resource (CHEF-3694)
+[2013-11-18T22:16:03-05:00] WARN: Previous execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/postgres.rb:8:in `from_file'
+[2013-11-18T22:16:03-05:00] WARN: Current  execute[service monit restart]: /home/deploy/chef-solo/cookbooks-2/monit_configs-tlq/recipes/redis-server.rb:8:in `from_file'
+Converging 79 resources
+Recipe: build-essential::debian
+  * package[autoconf] action install
+    - install version 2.68-1ubuntu2 of package autoconf
+
+  * package[binutils-doc] action install
+    - install version 2.22-6ubuntu1.1 of package binutils-doc
+
+  * package[bison] action install
+    - install version 1:2.5.dfsg-2.1 of package bison
+
+  * package[build-essential] action install (up to date)
+  * package[flex] action install
+    - install version 2.5.35-10ubuntu3 of package flex
+
+Recipe: users::sysadmins
+  * users_manage[sysadmin] action remove
+
+  * users_manage[sysadmin] action create
+
+Recipe: <Dynamically Defined Resource>
+  * user[deploy] action create
+    - alter user user[deploy]
+
+  * directory[/home/deploy/.ssh] action create (up to date)
+  * template[/home/deploy/.ssh/authorized_keys] action create
+    - update content in file /home/deploy/.ssh/authorized_keys from 972b05 to 8ca0a8
+        --- /home/deploy/.ssh/authorized_keys	2013-10-29 08:48:45.159440000 -0400
+        +++ /tmp/chef-rendered-template20131118-14142-oc5880	2013-11-18 22:16:14.623440000 -0500
+        @@ -1,2 +1,5 @@
+        +# Generated by Chef for localhost
+        +# Local modifications will be overwritten.
+        +
+         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDABjGqcHsTTDjmT30YUZ9VUJMz0cNYFqIRROz/7NVmS79gvIeS4/ll+flOtdgVcsDijjghHqA9AM/4OCv5sKICaufRV73PS4HKk06yfiCS2au5YzIg/jd+7gK5smxpS+55qtR0Yu1hOBrBik0Q2J7biLNpXLqHLnnrrrS5mkgnIRAb7Ojv/CQKT+ZDcusJWsZ7pzxY1BHqC59VNuy79knVbPAE44n6jnIXlfcIACVqmHlU/W6KVvxfkv+lncf2t6SAj3AuWdFD98YuWxN5QlGBPe+If5WwneYUc3ENjiSAJu1sHUYU9BMhe9YEFiCZVzKsv45Lr+1HlA225u447835 ivan.brennan@gmail.com
+
+  * group[sysadmin] action create
+    - create group[sysadmin]
+
+Recipe: sudo::default
+  * package[sudo] action install (up to date)
+  * template[/etc/sudoers] action create
+    - update content in file /etc/sudoers from 3bc623 to 02b6da
+        --- /etc/sudoers	2013-02-27 15:54:09.000000000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-ctgu31	2013-11-18 22:16:14.895440000 -0500
+        @@ -1,30 +1,18 @@
+        -#
+        -# This file MUST be edited with the 'visudo' command as root.
+        -#
+        -# Please consider adding local content in /etc/sudoers.d/ instead of
+        -# directly modifying this file.
+        -#
+        -# See the man page for details on how to write a sudoers file.
+        -#
+        -Defaults	env_reset
+        -Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        +# This file is managed by Chef.
+        +# Do NOT modify this file directly.
+         
+        -# Host alias specification
+        +Defaults      !lecture,tty_tickets,!fqdn
+         
+        -# User alias specification
+        -
+        -# Cmnd alias specification
+        -
+         # User privilege specification
+        -root	ALL=(ALL:ALL) ALL
+        +root          ALL=(ALL) ALL
+         
+        -# Members of the admin group may gain root privileges
+        -%admin ALL=(ALL) ALL
+        +deploy ALL=(ALL) NOPASSWD:ALL
+         
+        -# Allow members of group sudo to execute any command
+        -%sudo	ALL=(ALL:ALL) ALL
+        +# Members of the sysadmin group may gain root privileges
+        +%sysadmin ALL=(ALL) NOPASSWD:ALL
+         
+        -# See sudoers(5) for more information on "#include" directives:
+        +# Members of the group 'sysadmin' may gain root privileges
+        +%sysadmin ALL=(ALL) NOPASSWD:ALL
+         
+        -#includedir /etc/sudoers.d
+        +
+
+Recipe: basic-security-tlq::default
+  * package[fail2ban] action install
+    - install version 0.8.6-3wheezy2build0.12.04.1 of package fail2ban
+
+  * package[ufw] action install (up to date)
+  * package[unattended-upgrades] action install
+    - install version 0.76ubuntu1 of package unattended-upgrades
+
+  * file[/etc/apt/apt.conf.d/10periodic] action create
+    - update content in file /etc/apt/apt.conf.d/10periodic from 82d9ce to d1e783
+        --- /etc/apt/apt.conf.d/10periodic	2012-05-15 19:22:32.000000000 -0400
+        +++ /tmp/.10periodic20131118-14142-1ckyif9	2013-11-18 22:16:21.807440000 -0500
+        @@ -1,4 +1,5 @@
+        -APT::Periodic::Update-Package-Lists "1";
+        -APT::Periodic::Download-Upgradeable-Packages "0";
+        -APT::Periodic::AutocleanInterval "0";
+        +  APT::Periodic::Update-Package-Lists "1";
+        +  APT::Periodic::Download-Upgradeable-Packages "1";
+        +  APT::Periodic::AutocleanInterval "7";
+        +  APT::Periodic::Unattended-Upgrade "1";
+
+  * file[/etc/cron.daily/ntpdate] action create
+    - create new file /etc/cron.daily/ntpdate
+    - update content in file /etc/cron.daily/ntpdate from none to c73501
+        --- /etc/cron.daily/ntpdate	2013-11-18 22:16:21.815440000 -0500
+        +++ /tmp/.ntpdate20131118-14142-hrfkwk	2013-11-18 22:16:21.815440000 -0500
+        @@ -1 +1,4 @@
+        +#!/bin/sh
+        +
+        +ntpdate -s ntp.ubuntu.com pool.ntp.org
+    - change mode from '' to '0755'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * bash[ssh hardening] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-1ssydga"
+
+  * service[ssh] action restart
+    - restart service service[ssh]
+
+  * bash[opening ufw for ssh traffic] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-1kz3w1u"
+
+Recipe: look-and-feel-tlq::default
+  * package[htop] action install
+    - install version 1.0.1-1 of package htop
+
+  * package[vim] action install (up to date)
+  * package[unzip] action install
+    - install version 6.0-4ubuntu2 of package unzip
+
+  * bash[Including new locales] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-uq6crm"
+
+  * template[/etc/ssh_banner] action create
+    - create new file /etc/ssh_banner
+    - update content in file /etc/ssh_banner from none to 52fad5
+        --- /etc/ssh_banner	2013-11-18 22:16:29.439440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-137p42z	2013-11-18 22:16:29.443440000 -0500
+        @@ -1 +1,10 @@
+        +
+        +
+        +
+        +  _____                       _                  _
+        + |  __ \                     | |                | |   (_)
+        + | |__) |  _ __    ___     __| |  _   _    ___  | |_   _    ___    _ __  
+        + |  ___/  | '__|  / _ \   / _` | | | | |  / __| | __| | |  / _ \  | '_ \ 
+        + | |      | |    | (_) | | (_| | | |_| | | (__  | |_  | | | (_) | | | | |
+        + |_|      |_|     \___/   \__,_|  \__,_|  \___|  \__| |_|  \___/  |_| |_|
+    - change mode from '' to '0644'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * bash[Adding visual flags for production environment] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-fet8w"
+
+  * service[ssh] action restart
+    - restart service service[ssh]
+
+Recipe: monit-tlq::default
+  * package[monit] action install
+    - install version 1:5.3.2-1 of package monit
+
+  * template[/etc/monit/monitrc] action create
+    - update content in file /etc/monit/monitrc from fb4bc5 to 34867b
+        --- /etc/monit/monitrc	2012-01-03 00:05:47.000000000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-4ccg0b	2013-11-18 22:16:33.291440000 -0500
+        @@ -1,249 +1,20 @@
+        -###############################################################################
+        -## Monit control file
+        -###############################################################################
+        -##
+        -## Comments begin with a '#' and extend through the end of the line. Keywords
+        -## are case insensitive. All path's MUST BE FULLY QUALIFIED, starting with '/'.
+        -##
+        -## Below you will find examples of some frequently used statements. For 
+        -## information about the control file and a complete list of statements and 
+        -## options, please have a look in the Monit manual.
+        -##
+        -##
+        -###############################################################################
+        -## Global section
+        -###############################################################################
+        -##
+        -## Start Monit in the background (run as a daemon):
+        -#
+        -  set daemon 120            # check services at 2-minute intervals
+        -#   with start delay 240    # optional: delay the first check by 4-minutes (by 
+        -#                           # default Monit check immediately after Monit start)
+        -#
+        -#
+        -## Set syslog logging with the 'daemon' facility. If the FACILITY option is
+        -## omitted, Monit will use 'user' facility by default. If you want to log to 
+        -## a standalone log file instead, specify the full path to the log file
+        -#
+        -# set logfile syslog facility log_daemon                       
+        -  set logfile /var/log/monit.log
+        -#
+        -#
+        -## Set the location of the Monit id file which stores the unique id for the
+        -## Monit instance. The id is generated and stored on first Monit start. By 
+        -## default the file is placed in $HOME/.monit.id.
+        -#
+        -# set idfile /var/.monit.id
+        -  set idfile /var/lib/monit/id
+        -#
+        -## Set the location of the Monit state file which saves monitoring states
+        -## on each cycle. By default the file is placed in $HOME/.monit.state. If
+        -## the state file is stored on a persistent filesystem, Monit will recover
+        -## the monitoring state across reboots. If it is on temporary filesystem, the
+        -## state will be lost on reboot which may be convenient in some situations.
+        -#
+        -  set statefile /var/lib/monit/state
+        -#
+        -## Set the list of mail servers for alert delivery. Multiple servers may be 
+        -## specified using a comma separator. If the first mail server fails, Monit 
+        -# will use the second mail server in the list and so on. By default Monit uses 
+        -# port 25 - it is possible to override this with the PORT option.
+        -#
+        -# set mailserver mail.bar.baz,               # primary mailserver
+        -#                backup.bar.baz port 10025,  # backup mailserver on port 10025
+        -#                localhost                   # fallback relay
+        -#
+        -#
+        -## By default Monit will drop alert events if no mail servers are available. 
+        -## If you want to keep the alerts for later delivery retry, you can use the 
+        -## EVENTQUEUE statement. The base directory where undelivered alerts will be 
+        -## stored is specified by the BASEDIR option. You can limit the maximal queue
+        -## size using the SLOTS option (if omitted, the queue is limited by space 
+        -## available in the back end filesystem).
+        -#
+        -  set eventqueue
+        -      basedir /var/lib/monit/events # set the base directory where events will be stored
+        -      slots 100                     # optionally limit the queue size
+        -#
+        -#
+        -## Send status and events to M/Monit (for more informations about M/Monit 
+        -## see http://mmonit.com/). By default Monit registers credentials with 
+        -## M/Monit so M/Monit can smoothly communicate back to Monit and you don't
+        -## have to register Monit credentials manually in M/Monit. It is possible to
+        -## disable credential registration using the commented out option below. 
+        -## Though, if safety is a concern we recommend instead using https when
+        -## communicating with M/Monit and send credentials encrypted.
+        -#
+        -# set mmonit http://monit:monit@192.168.1.10:8080/collector
+        -#     # and register without credentials     # Don't register credentials
+        -#
+        -#
+        -## Monit by default uses the following format for alerts if the the mail-format
+        -## statement is missing::
+        -## --8<--
+        -## set mail-format {
+        -##      from: monit@$HOST
+        -##   subject: monit alert --  $EVENT $SERVICE
+        -##   message: $EVENT Service $SERVICE
+        -##                 Date:        $DATE
+        -##                 Action:      $ACTION
+        -##                 Host:        $HOST
+        -##                 Description: $DESCRIPTION
+        -##
+        -##            Your faithful employee,
+        -##            Monit
+        -## }
+        -## --8<--
+        -##
+        -## You can override this message format or parts of it, such as subject
+        -## or sender using the MAIL-FORMAT statement. Macros such as $DATE, etc.
+        -## are expanded at runtime. For example, to override the sender, use:
+        -#
+        -# set mail-format { from: monit@foo.bar }
+        -#
+        -#
+        -## You can set alert recipients whom will receive alerts if/when a 
+        -## service defined in this file has errors. Alerts may be restricted on 
+        -## events by using a filter as in the second example below. 
+        -#
+        -# set alert sysadm@foo.bar                       # receive all alerts
+        -# set alert manager@foo.bar only on { timeout }  # receive just service-
+        -#                                                # timeout alert
+        -#
+        -#
+        -## Monit has an embedded web server which can be used to view status of 
+        -## services monitored and manage services from a web interface. See the
+        -## Monit Wiki if you want to enable SSL for the web server. 
+        -#
+        -# set httpd port 2812 and
+        -#    use address localhost  # only accept connection from localhost
+        -#    allow localhost        # allow localhost to connect to the server and
+        -#    allow admin:monit      # require user 'admin' with password 'monit'
+        -#    allow @monit           # allow users of group 'monit' to connect (rw)
+        -#    allow @users readonly  # allow users of group 'users' to connect readonly
+        -#
+        -###############################################################################
+        -## Services
+        -###############################################################################
+        -##
+        -## Check general system resources such as load average, cpu and memory
+        -## usage. Each test specifies a resource, conditions and the action to be
+        -## performed should a test fail.
+        -#
+        -#  check system myhost.mydomain.tld
+        -#    if loadavg (1min) > 4 then alert
+        -#    if loadavg (5min) > 2 then alert
+        -#    if memory usage > 75% then alert
+        -#    if swap usage > 25% then alert
+        -#    if cpu usage (user) > 70% then alert
+        -#    if cpu usage (system) > 30% then alert
+        -#    if cpu usage (wait) > 20% then alert
+        -#
+        -#    
+        -## Check if a file exists, checksum, permissions, uid and gid. In addition
+        -## to alert recipients in the global section, customized alert can be sent to 
+        -## additional recipients by specifying a local alert handler. The service may 
+        -## be grouped using the GROUP option. More than one group can be specified by
+        -## repeating the 'group name' statement.
+        -#    
+        -#  check file apache_bin with path /usr/local/apache/bin/httpd
+        -#    if failed checksum and 
+        -#       expect the sum 8f7f419955cefa0b33a2ba316cba3659 then unmonitor
+        -#    if failed permission 755 then unmonitor
+        -#    if failed uid root then unmonitor
+        -#    if failed gid root then unmonitor
+        -#    alert security@foo.bar on {
+        -#           checksum, permission, uid, gid, unmonitor
+        -#        } with the mail-format { subject: Alarm! }
+        -#    group server
+        -#
+        -#    
+        -## Check that a process is running, in this case Apache, and that it respond
+        -## to HTTP and HTTPS requests. Check its resource usage such as cpu and memory,
+        -## and number of children. If the process is not running, Monit will restart 
+        -## it by default. In case the service is restarted very often and the 
+        -## problem remains, it is possible to disable monitoring using the TIMEOUT
+        -## statement. This service depends on another service (apache_bin) which
+        -## is defined above.
+        -#    
+        -#  check process apache with pidfile /usr/local/apache/logs/httpd.pid
+        -#    start program = "/etc/init.d/httpd start" with timeout 60 seconds
+        -#    stop program  = "/etc/init.d/httpd stop"
+        -#    if cpu > 60% for 2 cycles then alert
+        -#    if cpu > 80% for 5 cycles then restart
+        -#    if totalmem > 200.0 MB for 5 cycles then restart
+        -#    if children > 250 then restart
+        -#    if loadavg(5min) greater than 10 for 8 cycles then stop
+        -#    if failed host www.tildeslash.com port 80 protocol http 
+        -#       and request "/somefile.html"
+        -#       then restart
+        -#    if failed port 443 type tcpssl protocol http
+        -#       with timeout 15 seconds
+        -#       then restart
+        -#    if 3 restarts within 5 cycles then timeout
+        -#    depends on apache_bin
+        -#    group server
+        -#    
+        -#    
+        -## Check filesystem permissions, uid, gid, space and inode usage. Other services,
+        -## such as databases, may depend on this resource and an automatically graceful
+        -## stop may be cascaded to them before the filesystem will become full and data
+        -## lost.
+        -#
+        -#  check filesystem datafs with path /dev/sdb1
+        -#    start program  = "/bin/mount /data"
+        -#    stop program  = "/bin/umount /data"
+        -#    if failed permission 660 then unmonitor
+        -#    if failed uid root then unmonitor
+        -#    if failed gid disk then unmonitor
+        -#    if space usage > 80% for 5 times within 15 cycles then alert
+        -#    if space usage > 99% then stop
+        -#    if inode usage > 30000 then alert
+        -#    if inode usage > 99% then stop
+        -#    group server
+        -#
+        -#
+        -## Check a file's timestamp. In this example, we test if a file is older 
+        -## than 15 minutes and assume something is wrong if its not updated. Also,
+        -## if the file size exceed a given limit, execute a script
+        -#
+        -#  check file database with path /data/mydatabase.db
+        -#    if failed permission 700 then alert
+        -#    if failed uid data then alert
+        -#    if failed gid data then alert
+        -#    if timestamp > 15 minutes then alert
+        -#    if size > 100 MB then exec "/my/cleanup/script" as uid dba and gid dba
+        -#
+        -#
+        -## Check directory permission, uid and gid.  An event is triggered if the 
+        -## directory does not belong to the user with uid 0 and gid 0.  In addition, 
+        -## the permissions have to match the octal description of 755 (see chmod(1)).
+        -#
+        -#  check directory bin with path /bin
+        -#    if failed permission 755 then unmonitor
+        -#    if failed uid 0 then unmonitor
+        -#    if failed gid 0 then unmonitor
+        -#
+        -#
+        -## Check a remote host availability by issuing a ping test and check the 
+        -## content of a response from a web server. Up to three pings are sent and 
+        -## connection to a port and an application level network check is performed.
+        -#
+        -#  check host myserver with address 192.168.1.1
+        -#    if failed icmp type echo count 3 with timeout 3 seconds then alert
+        -#    if failed port 3306 protocol mysql with timeout 15 seconds then alert
+        -#    if failed url http://user:password@www.foo.bar:8080/?querystring
+        -#       and content == 'action="j_security_check"'
+        -#       then alert
+        -#
+        -#
+        -###############################################################################
+        -## Includes
+        -###############################################################################
+        -##
+        -## It is possible to include additional configuration parts from other files or
+        -## directories.
+        -#
+        -   include /etc/monit/conf.d/*
+        -#
+        +set daemon 30
+        +
+        +set logfile syslog facility log_daemon
+        +
+        +
+        +set alert user@example.com
+        +set mailserver mailserver.example.com port 999
+        +  username "deploy"
+        +  password "$1$f6cTNNt0$zK3kp92YMSE6kxg1UOA7j/"
+        +  using tlsv1
+        +  with timeout 30 seconds
+        +  using hostname "the_hostname"
+        +
+        +set httpd port 2812 and
+        +    use address localhost
+        +    allow localhost
+        +    allow username:password
+        +
+        +include /etc/monit/conf.d/*.conf
+    - change mode from '0600' to '0700'
+
+  * bash[disabling init.d script for monit] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-1jy1ivr"
+
+  * template[/etc/init/monit.conf] action create
+    - create new file /etc/init/monit.conf
+    - update content in file /etc/init/monit.conf from none to ade6e2
+        --- /etc/init/monit.conf	2013-11-18 22:16:33.467440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-1f2a4ny	2013-11-18 22:16:33.467440000 -0500
+        @@ -1 +1,24 @@
+        +# after adding this file run
+        +#   initctl reload-configuration
+        +#
+        +# You can manually start and stop monit like this:
+        +#
+        +# start monit
+        +# stop monit
+        +#
+        +
+        +description "Monit service manager"
+        +
+        +limit core unlimited unlimited
+        +
+        +start on runlevel [2345]
+        +stop on runlevel [!2345]
+        +
+        +expect daemon
+        +respawn
+        +
+        +exec /usr/bin/monit -c /etc/monit/monitrc
+        +
+        +pre-stop exec /usr/bin/monit -c /etc/monit/monitrc quit
+        +
+    - change mode from '' to '0644'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * template[/etc/default/monit] action create
+    - update content in file /etc/default/monit from 6739c0 to 48302d
+        --- /etc/default/monit	2011-12-21 11:13:38.000000000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-1d414o7	2013-11-18 22:16:33.523440000 -0500
+        @@ -1,11 +1,2 @@
+        -# /etc/default/monit
+        -
+        -# Defaults for monit initscript.  This file is sourced by
+        -# /bin/sh from /etc/init.d/monit.
+        -
+        -# You must set this variable to yes for monit to start
+        -START=yes
+        -
+        -# Options to pass to monit
+        -#MONIT_OPTS=
+        +startup=1
+
+  * execute[initctl reload-configuration] action run
+    - execute initctl reload-configuration
+
+  * execute[service monit restart] action run
+    - execute service monit restart
+
+Recipe: monit_configs-tlq::system
+  * template[/etc/monit/conf.d/system.conf] action create
+    - create new file /etc/monit/conf.d/system.conf
+    - update content in file /etc/monit/conf.d/system.conf from none to 46edbf
+        --- /etc/monit/conf.d/system.conf	2013-11-18 22:16:33.751440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-gdsq7p	2013-11-18 22:16:33.751440000 -0500
+        @@ -1 +1,8 @@
+        +check system localhost
+        +  if loadavg (1min) > 4 then alert
+        +  if loadavg (5min) > 3 then alert
+        +  if memory usage > 75% then alert
+        +  if cpu usage (user) > 70% for 5 cycles then alert
+        +  if cpu usage (system) > 30% for 5 cycles then alert
+        +  if cpu usage (wait) > 20% for 5 cycles then alert
+    - change mode from '' to '0700'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * execute[service monit restart] action run
+    - execute service monit restart
+
+Recipe: nginx-tlq::default
+  * bash[adding stable nginx ppa] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-4uqk6c"
+
+  * package[nginx] action install
+    - install version 1.1.19-1ubuntu0.4 of package nginx
+
+  * template[/etc/nginx/nginx.conf] action create
+    - update content in file /etc/nginx/nginx.conf from 38154b to 8353ca
+        --- /etc/nginx/nginx.conf	2012-03-28 22:50:24.000000000 -0400
+        +++ /tmp/chef-rendered-template20131118-14142-1kx1nti	2013-11-18 22:16:41.091440000 -0500
+        @@ -3,94 +3,64 @@
+         pid /var/run/nginx.pid;
+         
+         events {
+        -	worker_connections 768;
+        -	# multi_accept on;
+        +  worker_connections 768;
+        +  # multi_accept on;
+         }
+         
+         http {
+         
+        -	##
+        -	# Basic Settings
+        -	##
+        +  ##
+        +  # Basic Settings
+        +  ##
+         
+        -	sendfile on;
+        -	tcp_nopush on;
+        -	tcp_nodelay on;
+        -	keepalive_timeout 65;
+        -	types_hash_max_size 2048;
+        -	# server_tokens off;
+        +  sendfile on;
+        +  tcp_nopush on;
+        +  tcp_nodelay on;
+        +  keepalive_timeout 65;
+        +  types_hash_max_size 2048;
+        +  # server_tokens off;
+         
+        -	# server_names_hash_bucket_size 64;
+        -	# server_name_in_redirect off;
+        +  # server_names_hash_bucket_size 64;
+        +  # server_name_in_redirect off;
+         
+        -	include /etc/nginx/mime.types;
+        -	default_type application/octet-stream;
+        +  include /etc/nginx/mime.types;
+        +  default_type application/octet-stream;
+         
+        -	##
+        -	# Logging Settings
+        -	##
+        +  ##
+        +  # Logging Settings
+        +  ##
+         
+        -	access_log /var/log/nginx/access.log;
+        -	error_log /var/log/nginx/error.log;
+        +  access_log /var/log/nginx/access.log;
+        +  error_log /var/log/nginx/error.log;
+         
+        -	##
+        -	# Gzip Settings
+        -	##
+        +  ##
+        +  # Gzip Settings
+        +  ##
+         
+        -	gzip on;
+        -	gzip_disable "msie6";
+        +  gzip on;
+        +  gzip_disable "msie6";
+         
+        -	# gzip_vary on;
+        -	# gzip_proxied any;
+        -	# gzip_comp_level 6;
+        -	# gzip_buffers 16 8k;
+        -	# gzip_http_version 1.1;
+        -	# gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+        +  # gzip_vary on;
+        +  # gzip_proxied any;
+        +  # gzip_comp_level 6;
+        +  # gzip_buffers 16 8k;
+        +  # gzip_http_version 1.1;
+        +  # gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+         
+        -	##
+        -	# nginx-naxsi config
+        -	##
+        -	# Uncomment it if you installed nginx-naxsi
+        -	##
+        +  ##
+        +  # nginx-passenger config
+        +  ##
+        +  # Uncomment it if you installed nginx-passenger
+        +  ##
+        +  
+        +  #passenger_root /usr;
+        +  #passenger_ruby /usr/bin/ruby;
+         
+        -	#include /etc/nginx/naxsi_core.rules;
+        +  ##
+        +  # Virtual Host Configs
+        +  ##
+         
+        -	##
+        -	# nginx-passenger config
+        -	##
+        -	# Uncomment it if you installed nginx-passenger
+        -	##
+        -	
+        -	#passenger_root /usr;
+        -	#passenger_ruby /usr/bin/ruby;
+        -
+        -	##
+        -	# Virtual Host Configs
+        -	##
+        -
+        -	include /etc/nginx/conf.d/*.conf;
+        -	include /etc/nginx/sites-enabled/*;
+        +  include /etc/nginx/conf.d/*.conf;
+        +  include /etc/nginx/sites-enabled/*;
+         }
+        -
+        -
+        -#mail {
+        -#	# See sample authentication script at:
+        -#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+        -# 
+        -#	# auth_http localhost/auth.php;
+        -#	# pop3_capabilities "TOP" "USER";
+        -#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
+        -# 
+        -#	server {
+        -#		listen     localhost:110;
+        -#		protocol   pop3;
+        -#		proxy      on;
+        -#	}
+        -# 
+        -#	server {
+        -#		listen     localhost:143;
+        -#		protocol   imap;
+        -#		proxy      on;
+        -#	}
+        -#}
+
+  * bash[allowing nginx traffic through firewall] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-uynddc"
+
+  * bash[restarting nginx] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-1wpb3n3"
+
+Recipe: monit_configs-tlq::nginx
+  * template[/etc/monit/conf.d/nginx.conf] action create
+    - create new file /etc/monit/conf.d/nginx.conf
+    - update content in file /etc/monit/conf.d/nginx.conf from none to 89433e
+        --- /etc/monit/conf.d/nginx.conf	2013-11-18 22:16:44.911440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-15il2w1	2013-11-18 22:16:44.911440000 -0500
+        @@ -1 +1,8 @@
+        +#Monitoring Nginx Service
+        +
+        +check process nginx with pidfile /var/run/nginx.pid
+        +  start program = "/etc/init.d/nginx start"
+        +  stop program = "/etc/init.d/nginx stop"
+        +  if failed host 127.0.0.1 port 80 then restart
+        +  if 15 restarts within 15 cycles then timeout
+    - change mode from '' to '0700'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * execute[service monit restart] action run
+    - execute service monit restart
+
+Recipe: postgresql::client
+  * package[postgresql-client] action install
+    - install version 9.1+129ubuntu1 of package postgresql-client
+
+  * package[libpq-dev] action install
+    - install version 9.1.10-0ubuntu12.04 of package libpq-dev
+
+Recipe: postgresql::server_debian
+  * package[postgresql] action install
+    - install version 9.1+129ubuntu1 of package postgresql
+
+  * service[postgresql] action enable
+    - enable service service[postgresql]
+
+  * service[postgresql] action start (up to date)
+Recipe: postgresql::server
+  * template[/etc/postgresql/9.1/main/postgresql.conf] action create
+    - update content in file /etc/postgresql/9.1/main/postgresql.conf from 8393cf to 0e835e
+        --- /etc/postgresql/9.1/main/postgresql.conf	2013-11-18 22:16:55.303440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-1d2guhg	2013-11-18 22:16:58.599440000 -0500
+        @@ -1,557 +1,19 @@
+        -# -----------------------------
+         # PostgreSQL configuration file
+        -# -----------------------------
+        -#
+        -# This file consists of lines of the form:
+        -#
+        -#   name = value
+        -#
+        -# (The "=" is optional.)  Whitespace may be used.  Comments are introduced with
+        -# "#" anywhere on a line.  The complete list of parameter names and allowed
+        -# values can be found in the PostgreSQL documentation.
+        -#
+        -# The commented-out settings shown in this file represent the default values.
+        -# Re-commenting a setting is NOT sufficient to revert it to the default value;
+        -# you need to reload the server.
+        -#
+        -# This file is read on server startup and when the server receives a SIGHUP
+        -# signal.  If you edit the file on a running system, you have to SIGHUP the
+        -# server for the changes to take effect, or use "pg_ctl reload".  Some
+        -# parameters, which are marked below, require a server shutdown and restart to
+        -# take effect.
+        -#
+        -# Any parameter can also be given as a command-line option to the server, e.g.,
+        -# "postgres -c log_connections=on".  Some parameters can be changed at run time
+        -# with the "SET" SQL command.
+        -#
+        -# Memory units:  kB = kilobytes        Time units:  ms  = milliseconds
+        -#                MB = megabytes                     s   = seconds
+        -#                GB = gigabytes                     min = minutes
+        -#                                                   h   = hours
+        -#                                                   d   = days
+        +# This file was automatically generated and dropped off by chef!
+        +# Please refer to the PostgreSQL documentation for details on
+        +# configuration settings.
+         
+        -
+        -#------------------------------------------------------------------------------
+        -# FILE LOCATIONS
+        -#------------------------------------------------------------------------------
+        -
+        -# The default values of these variables are driven from the -D command-line
+        -# option or PGDATA environment variable, represented here as ConfigDir.
+        -
+        -data_directory = '/var/lib/postgresql/9.1/main'		# use data in another directory
+        -					# (change requires restart)
+        -hba_file = '/etc/postgresql/9.1/main/pg_hba.conf'	# host-based authentication file
+        -					# (change requires restart)
+        -ident_file = '/etc/postgresql/9.1/main/pg_ident.conf'	# ident configuration file
+        -					# (change requires restart)
+        -
+        -# If external_pid_file is not explicitly set, no extra PID file is written.
+        -external_pid_file = '/var/run/postgresql/9.1-main.pid'		# write an extra PID file
+        -					# (change requires restart)
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# CONNECTIONS AND AUTHENTICATION
+        -#------------------------------------------------------------------------------
+        -
+        -# - Connection Settings -
+        -
+        -#listen_addresses = 'localhost'		# what IP address(es) to listen on;
+        -					# comma-separated list of addresses;
+        -					# defaults to 'localhost', '*' = all
+        -					# (change requires restart)
+        -port = 5432				# (change requires restart)
+        -max_connections = 100			# (change requires restart)
+        -# Note:  Increasing max_connections costs ~400 bytes of shared memory per
+        -# connection slot, plus lock space (see max_locks_per_transaction).
+        -#superuser_reserved_connections = 3	# (change requires restart)
+        -unix_socket_directory = '/var/run/postgresql'		# (change requires restart)
+        -#unix_socket_group = ''			# (change requires restart)
+        -#unix_socket_permissions = 0777		# begin with 0 to use octal notation
+        -					# (change requires restart)
+        -#bonjour = off				# advertise server via Bonjour
+        -					# (change requires restart)
+        -#bonjour_name = ''			# defaults to the computer name
+        -					# (change requires restart)
+        -
+        -# - Security and Authentication -
+        -
+        -#authentication_timeout = 1min		# 1s-600s
+        -ssl = true				# (change requires restart)
+        -#ssl_ciphers = 'ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH'	# allowed SSL ciphers
+        -					# (change requires restart)
+        -#ssl_renegotiation_limit = 512MB	# amount of data between renegotiations
+        -#password_encryption = on
+        -#db_user_namespace = off
+        -
+        -# Kerberos and GSSAPI
+        -#krb_server_keyfile = ''
+        -#krb_srvname = 'postgres'		# (Kerberos only)
+        -#krb_caseins_users = off
+        -
+        -# - TCP Keepalives -
+        -# see "man 7 tcp" for details
+        -
+        -#tcp_keepalives_idle = 0		# TCP_KEEPIDLE, in seconds;
+        -					# 0 selects the system default
+        -#tcp_keepalives_interval = 0		# TCP_KEEPINTVL, in seconds;
+        -					# 0 selects the system default
+        -#tcp_keepalives_count = 0		# TCP_KEEPCNT;
+        -					# 0 selects the system default
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# RESOURCE USAGE (except WAL)
+        -#------------------------------------------------------------------------------
+        -
+        -# - Memory -
+        -
+        -shared_buffers = 24MB			# min 128kB
+        -					# (change requires restart)
+        -#temp_buffers = 8MB			# min 800kB
+        -#max_prepared_transactions = 0		# zero disables the feature
+        -					# (change requires restart)
+        -# Note:  Increasing max_prepared_transactions costs ~600 bytes of shared memory
+        -# per transaction slot, plus lock space (see max_locks_per_transaction).
+        -# It is not advisable to set max_prepared_transactions nonzero unless you
+        -# actively intend to use prepared transactions.
+        -#work_mem = 1MB				# min 64kB
+        -#maintenance_work_mem = 16MB		# min 1MB
+        -#max_stack_depth = 2MB			# min 100kB
+        -
+        -# - Kernel Resource Usage -
+        -
+        -#max_files_per_process = 1000		# min 25
+        -					# (change requires restart)
+        -#shared_preload_libraries = ''		# (change requires restart)
+        -
+        -# - Cost-Based Vacuum Delay -
+        -
+        -#vacuum_cost_delay = 0ms		# 0-100 milliseconds
+        -#vacuum_cost_page_hit = 1		# 0-10000 credits
+        -#vacuum_cost_page_miss = 10		# 0-10000 credits
+        -#vacuum_cost_page_dirty = 20		# 0-10000 credits
+        -#vacuum_cost_limit = 200		# 1-10000 credits
+        -
+        -# - Background Writer -
+        -
+        -#bgwriter_delay = 200ms			# 10-10000ms between rounds
+        -#bgwriter_lru_maxpages = 100		# 0-1000 max buffers written/round
+        -#bgwriter_lru_multiplier = 2.0		# 0-10.0 multipler on buffers scanned/round
+        -
+        -# - Asynchronous Behavior -
+        -
+        -#effective_io_concurrency = 1		# 1-1000. 0 disables prefetching
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# WRITE AHEAD LOG
+        -#------------------------------------------------------------------------------
+        -
+        -# - Settings -
+        -
+        -#wal_level = minimal			# minimal, archive, or hot_standby
+        -					# (change requires restart)
+        -#fsync = on				# turns forced synchronization on or off
+        -#synchronous_commit = on		# synchronization level; on, off, or local
+        -#wal_sync_method = fsync		# the default is the first option
+        -					# supported by the operating system:
+        -					#   open_datasync
+        -					#   fdatasync (default on Linux)
+        -					#   fsync
+        -					#   fsync_writethrough
+        -					#   open_sync
+        -#full_page_writes = on			# recover from partial page writes
+        -#wal_buffers = -1			# min 32kB, -1 sets based on shared_buffers
+        -					# (change requires restart)
+        -#wal_writer_delay = 200ms		# 1-10000 milliseconds
+        -
+        -#commit_delay = 0			# range 0-100000, in microseconds
+        -#commit_siblings = 5			# range 1-1000
+        -
+        -# - Checkpoints -
+        -
+        -#checkpoint_segments = 3		# in logfile segments, min 1, 16MB each
+        -#checkpoint_timeout = 5min		# range 30s-1h
+        -#checkpoint_completion_target = 0.5	# checkpoint target duration, 0.0 - 1.0
+        -#checkpoint_warning = 30s		# 0 disables
+        -
+        -# - Archiving -
+        -
+        -#archive_mode = off		# allows archiving to be done
+        -				# (change requires restart)
+        -#archive_command = ''		# command to use to archive a logfile segment
+        -#archive_timeout = 0		# force a logfile segment switch after this
+        -				# number of seconds; 0 disables
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# REPLICATION
+        -#------------------------------------------------------------------------------
+        -
+        -# - Master Server -
+        -
+        -# These settings are ignored on a standby server
+        -
+        -#max_wal_senders = 0		# max number of walsender processes
+        -				# (change requires restart)
+        -#wal_sender_delay = 1s		# walsender cycle time, 1-10000 milliseconds
+        -#wal_keep_segments = 0		# in logfile segments, 16MB each; 0 disables
+        -#vacuum_defer_cleanup_age = 0	# number of xacts by which cleanup is delayed
+        -#replication_timeout = 60s	# in milliseconds; 0 disables
+        -#synchronous_standby_names = ''	# standby servers that provide sync rep
+        -				# comma-separated list of application_name
+        -				# from standby(s); '*' = all
+        -
+        -# - Standby Servers -
+        -
+        -# These settings are ignored on a master server
+        -
+        -#hot_standby = off			# "on" allows queries during recovery
+        -					# (change requires restart)
+        -#max_standby_archive_delay = 30s	# max delay before canceling queries
+        -					# when reading WAL from archive;
+        -					# -1 allows indefinite delay
+        -#max_standby_streaming_delay = 30s	# max delay before canceling queries
+        -					# when reading streaming WAL;
+        -					# -1 allows indefinite delay
+        -#wal_receiver_status_interval = 10s	# send replies at least this often
+        -					# 0 disables
+        -#hot_standby_feedback = off		# send info from standby to prevent
+        -					# query conflicts
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# QUERY TUNING
+        -#------------------------------------------------------------------------------
+        -
+        -# - Planner Method Configuration -
+        -
+        -#enable_bitmapscan = on
+        -#enable_hashagg = on
+        -#enable_hashjoin = on
+        -#enable_indexscan = on
+        -#enable_material = on
+        -#enable_mergejoin = on
+        -#enable_nestloop = on
+        -#enable_seqscan = on
+        -#enable_sort = on
+        -#enable_tidscan = on
+        -
+        -# - Planner Cost Constants -
+        -
+        -#seq_page_cost = 1.0			# measured on an arbitrary scale
+        -#random_page_cost = 4.0			# same scale as above
+        -#cpu_tuple_cost = 0.01			# same scale as above
+        -#cpu_index_tuple_cost = 0.005		# same scale as above
+        -#cpu_operator_cost = 0.0025		# same scale as above
+        -#effective_cache_size = 128MB
+        -
+        -# - Genetic Query Optimizer -
+        -
+        -#geqo = on
+        -#geqo_threshold = 12
+        -#geqo_effort = 5			# range 1-10
+        -#geqo_pool_size = 0			# selects default based on effort
+        -#geqo_generations = 0			# selects default based on effort
+        -#geqo_selection_bias = 2.0		# range 1.5-2.0
+        -#geqo_seed = 0.0			# range 0.0-1.0
+        -
+        -# - Other Planner Options -
+        -
+        -#default_statistics_target = 100	# range 1-10000
+        -#constraint_exclusion = partition	# on, off, or partition
+        -#cursor_tuple_fraction = 0.1		# range 0.0-1.0
+        -#from_collapse_limit = 8
+        -#join_collapse_limit = 8		# 1 disables collapsing of explicit
+        -					# JOIN clauses
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# ERROR REPORTING AND LOGGING
+        -#------------------------------------------------------------------------------
+        -
+        -# - Where to Log -
+        -
+        -#log_destination = 'stderr'		# Valid values are combinations of
+        -					# stderr, csvlog, syslog, and eventlog,
+        -					# depending on platform.  csvlog
+        -					# requires logging_collector to be on.
+        -
+        -# This is used when logging to stderr:
+        -#logging_collector = off		# Enable capturing of stderr and csvlog
+        -					# into log files. Required to be on for
+        -					# csvlogs.
+        -					# (change requires restart)
+        -
+        -# These are only used if logging_collector is on:
+        -#log_directory = 'pg_log'		# directory where log files are written,
+        -					# can be absolute or relative to PGDATA
+        -#log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'	# log file name pattern,
+        -					# can include strftime() escapes
+        -#log_file_mode = 0600			# creation mode for log files,
+        -					# begin with 0 to use octal notation
+        -#log_truncate_on_rotation = off		# If on, an existing log file with the
+        -					# same name as the new log file will be
+        -					# truncated rather than appended to.
+        -					# But such truncation only occurs on
+        -					# time-driven rotation, not on restarts
+        -					# or size-driven rotation.  Default is
+        -					# off, meaning append to existing files
+        -					# in all cases.
+        -#log_rotation_age = 1d			# Automatic rotation of logfiles will
+        -					# happen after that time.  0 disables.
+        -#log_rotation_size = 10MB		# Automatic rotation of logfiles will
+        -					# happen after that much log output.
+        -					# 0 disables.
+        -
+        -# These are relevant when logging to syslog:
+        -#syslog_facility = 'LOCAL0'
+        -#syslog_ident = 'postgres'
+        -
+        -#silent_mode = off			# Run server silently.
+        -					# DO NOT USE without syslog or
+        -					# logging_collector
+        -					# (change requires restart)
+        -
+        -
+        -# - When to Log -
+        -
+        -#client_min_messages = notice		# values in order of decreasing detail:
+        -					#   debug5
+        -					#   debug4
+        -					#   debug3
+        -					#   debug2
+        -					#   debug1
+        -					#   log
+        -					#   notice
+        -					#   warning
+        -					#   error
+        -
+        -#log_min_messages = warning		# values in order of decreasing detail:
+        -					#   debug5
+        -					#   debug4
+        -					#   debug3
+        -					#   debug2
+        -					#   debug1
+        -					#   info
+        -					#   notice
+        -					#   warning
+        -					#   error
+        -					#   log
+        -					#   fatal
+        -					#   panic
+        -
+        -#log_min_error_statement = error	# values in order of decreasing detail:
+        -				 	#   debug5
+        -					#   debug4
+        -					#   debug3
+        -					#   debug2
+        -					#   debug1
+        -				 	#   info
+        -					#   notice
+        -					#   warning
+        -					#   error
+        -					#   log
+        -					#   fatal
+        -					#   panic (effectively off)
+        -
+        -#log_min_duration_statement = -1	# -1 is disabled, 0 logs all statements
+        -					# and their durations, > 0 logs only
+        -					# statements running at least this number
+        -					# of milliseconds
+        -
+        -
+        -# - What to Log -
+        -
+        -#debug_print_parse = off
+        -#debug_print_rewritten = off
+        -#debug_print_plan = off
+        -#debug_pretty_print = on
+        -#log_checkpoints = off
+        -#log_connections = off
+        -#log_disconnections = off
+        -#log_duration = off
+        -#log_error_verbosity = default		# terse, default, or verbose messages
+        -#log_hostname = off
+        -log_line_prefix = '%t '			# special values:
+        -					#   %a = application name
+        -					#   %u = user name
+        -					#   %d = database name
+        -					#   %r = remote host and port
+        -					#   %h = remote host
+        -					#   %p = process ID
+        -					#   %t = timestamp without milliseconds
+        -					#   %m = timestamp with milliseconds
+        -					#   %i = command tag
+        -					#   %e = SQL state
+        -					#   %c = session ID
+        -					#   %l = session line number
+        -					#   %s = session start timestamp
+        -					#   %v = virtual transaction ID
+        -					#   %x = transaction ID (0 if none)
+        -					#   %q = stop here in non-session
+        -					#        processes
+        -					#   %% = '%'
+        -					# e.g. '<%u%%%d> '
+        -#log_lock_waits = off			# log lock waits >= deadlock_timeout
+        -#log_statement = 'none'			# none, ddl, mod, all
+        -#log_temp_files = -1			# log temporary files equal or larger
+        -					# than the specified size in kilobytes;
+        -					# -1 disables, 0 logs all temp files
+        -#log_timezone = '(defaults to server environment setting)'
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# RUNTIME STATISTICS
+        -#------------------------------------------------------------------------------
+        -
+        -# - Query/Index Statistics Collector -
+        -
+        -#track_activities = on
+        -#track_counts = on
+        -#track_functions = none			# none, pl, all
+        -#track_activity_query_size = 1024 	# (change requires restart)
+        -#update_process_title = on
+        -#stats_temp_directory = 'pg_stat_tmp'
+        -
+        -
+        -# - Statistics Monitoring -
+        -
+        -#log_parser_stats = off
+        -#log_planner_stats = off
+        -#log_executor_stats = off
+        -#log_statement_stats = off
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# AUTOVACUUM PARAMETERS
+        -#------------------------------------------------------------------------------
+        -
+        -#autovacuum = on			# Enable autovacuum subprocess?  'on'
+        -					# requires track_counts to also be on.
+        -#log_autovacuum_min_duration = -1	# -1 disables, 0 logs all actions and
+        -					# their durations, > 0 logs only
+        -					# actions running at least this number
+        -					# of milliseconds.
+        -#autovacuum_max_workers = 3		# max number of autovacuum subprocesses
+        -					# (change requires restart)
+        -#autovacuum_naptime = 1min		# time between autovacuum runs
+        -#autovacuum_vacuum_threshold = 50	# min number of row updates before
+        -					# vacuum
+        -#autovacuum_analyze_threshold = 50	# min number of row updates before
+        -					# analyze
+        -#autovacuum_vacuum_scale_factor = 0.2	# fraction of table size before vacuum
+        -#autovacuum_analyze_scale_factor = 0.1	# fraction of table size before analyze
+        -#autovacuum_freeze_max_age = 200000000	# maximum XID age before forced vacuum
+        -					# (change requires restart)
+        -#autovacuum_vacuum_cost_delay = 20ms	# default vacuum cost delay for
+        -					# autovacuum, in milliseconds;
+        -					# -1 means use vacuum_cost_delay
+        -#autovacuum_vacuum_cost_limit = -1	# default vacuum cost limit for
+        -					# autovacuum, -1 means use
+        -					# vacuum_cost_limit
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# CLIENT CONNECTION DEFAULTS
+        -#------------------------------------------------------------------------------
+        -
+        -# - Statement Behavior -
+        -
+        -#search_path = '"$user",public'		# schema names
+        -#default_tablespace = ''		# a tablespace name, '' uses the default
+        -#temp_tablespaces = ''			# a list of tablespace names, '' uses
+        -					# only default tablespace
+        -#check_function_bodies = on
+        -#default_transaction_isolation = 'read committed'
+        -#default_transaction_read_only = off
+        -#default_transaction_deferrable = off
+        -#session_replication_role = 'origin'
+        -#statement_timeout = 0			# in milliseconds, 0 is disabled
+        -#vacuum_freeze_min_age = 50000000
+        -#vacuum_freeze_table_age = 150000000
+        -#bytea_output = 'hex'			# hex, escape
+        -#xmlbinary = 'base64'
+        -#xmloption = 'content'
+        -
+        -# - Locale and Formatting -
+        -
+        +data_directory = '/var/lib/postgresql/9.1/main'
+         datestyle = 'iso, mdy'
+        -#intervalstyle = 'postgres'
+        -#timezone = '(defaults to server environment setting)'
+        -#timezone_abbreviations = 'Default'     # Select the set of available time zone
+        -					# abbreviations.  Currently, there are
+        -					#   Default
+        -					#   Australia
+        -					#   India
+        -					# You can create your own file in
+        -					# share/timezonesets/.
+        -#extra_float_digits = 0			# min -15, max 3
+        -#client_encoding = sql_ascii		# actually, defaults to database
+        -					# encoding
+        -
+        -# These settings are initialized by initdb, but they can be changed.
+        -lc_messages = 'en_US.UTF-8'			# locale for system error message
+        -					# strings
+        -lc_monetary = 'en_US.UTF-8'			# locale for monetary formatting
+        -lc_numeric = 'en_US.UTF-8'			# locale for number formatting
+        -lc_time = 'en_US.UTF-8'				# locale for time formatting
+        -
+        -# default configuration for text search
+         default_text_search_config = 'pg_catalog.english'
+        -
+        -# - Other Defaults -
+        -
+        -#dynamic_library_path = '$libdir'
+        -#local_preload_libraries = ''
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# LOCK MANAGEMENT
+        -#------------------------------------------------------------------------------
+        -
+        -#deadlock_timeout = 1s
+        -#max_locks_per_transaction = 64		# min 10
+        -					# (change requires restart)
+        -# Note:  Each lock table slot uses ~270 bytes of shared memory, and there are
+        -# max_locks_per_transaction * (max_connections + max_prepared_transactions)
+        -# lock table slots.
+        -#max_pred_locks_per_transaction = 64	# min 10
+        -					# (change requires restart)
+        -
+        -#------------------------------------------------------------------------------
+        -# VERSION/PLATFORM COMPATIBILITY
+        -#------------------------------------------------------------------------------
+        -
+        -# - Previous PostgreSQL Versions -
+        -
+        -#array_nulls = on
+        -#backslash_quote = safe_encoding	# on, off, or safe_encoding
+        -#default_with_oids = off
+        -#escape_string_warning = on
+        -#lo_compat_privileges = off
+        -#quote_all_identifiers = off
+        -#sql_inheritance = on
+        -#standard_conforming_strings = on
+        -#synchronize_seqscans = on
+        -
+        -# - Other Platforms and Clients -
+        -
+        -#transform_null_equals = off
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# ERROR HANDLING
+        -#------------------------------------------------------------------------------
+        -
+        -#exit_on_error = off				# terminate session on any error?
+        -#restart_after_crash = on			# reinitialize after backend crash?
+        -
+        -
+        -#------------------------------------------------------------------------------
+        -# CUSTOMIZED OPTIONS
+        -#------------------------------------------------------------------------------
+        -
+        -#custom_variable_classes = ''		# list of custom variable class names
+        +external_pid_file = '/var/run/postgresql/9.1-main.pid'
+        +hba_file = '/etc/postgresql/9.1/main/pg_hba.conf'
+        +ident_file = '/etc/postgresql/9.1/main/pg_ident.conf'
+        +listen_addresses = 'localhost'
+        +log_line_prefix = '%t '
+        +max_connections = 100
+        +port = 5432
+        +shared_buffers = '24MB'
+        +ssl = on
+        +unix_socket_directory = '/var/run/postgresql'
+    - change mode from '0644' to '0600'
+
+Recipe: postgresql::server_debian
+  * service[postgresql] action reload
+    - reload service service[postgresql]
+
+Recipe: postgresql::server
+  * template[/etc/postgresql/9.1/main/pg_hba.conf] action create
+    - update content in file /etc/postgresql/9.1/main/pg_hba.conf from 5a7719 to 4f51ec
+        --- /etc/postgresql/9.1/main/pg_hba.conf	2013-11-18 22:16:55.295440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-gopbas	2013-11-18 22:16:58.867440000 -0500
+        @@ -1,100 +1,25 @@
+        +# This file was automatically generated and dropped off by Chef!
+        +
+         # PostgreSQL Client Authentication Configuration File
+         # ===================================================
+         #
+         # Refer to the "Client Authentication" section in the PostgreSQL
+        -# documentation for a complete description of this file.  A short
+        -# synopsis follows.
+        -#
+        -# This file controls: which hosts are allowed to connect, how clients
+        -# are authenticated, which PostgreSQL user names they can use, which
+        -# databases they can access.  Records take one of these forms:
+        -#
+        -# local      DATABASE  USER  METHOD  [OPTIONS]
+        -# host       DATABASE  USER  ADDRESS  METHOD  [OPTIONS]
+        -# hostssl    DATABASE  USER  ADDRESS  METHOD  [OPTIONS]
+        -# hostnossl  DATABASE  USER  ADDRESS  METHOD  [OPTIONS]
+        -#
+        -# (The uppercase items must be replaced by actual values.)
+        -#
+        -# The first field is the connection type: "local" is a Unix-domain
+        -# socket, "host" is either a plain or SSL-encrypted TCP/IP socket,
+        -# "hostssl" is an SSL-encrypted TCP/IP socket, and "hostnossl" is a
+        -# plain TCP/IP socket.
+        -#
+        -# DATABASE can be "all", "sameuser", "samerole", "replication", a
+        -# database name, or a comma-separated list thereof. The "all"
+        -# keyword does not match "replication". Access to replication
+        -# must be enabled in a separate record (see example below).
+        -#
+        -# USER can be "all", a user name, a group name prefixed with "+", or a
+        -# comma-separated list thereof.  In both the DATABASE and USER fields
+        -# you can also write a file name prefixed with "@" to include names
+        -# from a separate file.
+        -#
+        -# ADDRESS specifies the set of hosts the record matches.  It can be a
+        -# host name, or it is made up of an IP address and a CIDR mask that is
+        -# an integer (between 0 and 32 (IPv4) or 128 (IPv6) inclusive) that
+        -# specifies the number of significant bits in the mask.  A host name
+        -# that starts with a dot (.) matches a suffix of the actual host name.
+        -# Alternatively, you can write an IP address and netmask in separate
+        -# columns to specify the set of hosts.  Instead of a CIDR-address, you
+        -# can write "samehost" to match any of the server's own IP addresses,
+        -# or "samenet" to match any address in any subnet that the server is
+        -# directly connected to.
+        -#
+        -# METHOD can be "trust", "reject", "md5", "password", "gss", "sspi",
+        -# "krb5", "ident", "peer", "pam", "ldap", "radius" or "cert".  Note that
+        -# "password" sends passwords in clear text; "md5" is preferred since
+        -# it sends encrypted passwords.
+        -#
+        -# OPTIONS are a set of options for the authentication in the format
+        -# NAME=VALUE.  The available options depend on the different
+        -# authentication methods -- refer to the "Client Authentication"
+        -# section in the documentation for a list of which options are
+        -# available for which authentication methods.
+        -#
+        -# Database and user names containing spaces, commas, quotes and other
+        -# special characters must be quoted.  Quoting one of the keywords
+        -# "all", "sameuser", "samerole" or "replication" makes the name lose
+        -# its special character, and just match a database or username with
+        -# that name.
+        -#
+        -# This file is read on server startup and when the postmaster receives
+        -# a SIGHUP signal.  If you edit the file on a running system, you have
+        -# to SIGHUP the postmaster for the changes to take effect.  You can
+        -# use "pg_ctl reload" to do that.
+        +# documentation for a complete description of this file.
+         
+        -# Put your actual configuration here
+        -# ----------------------------------
+        -#
+        -# If you want to allow non-local connections, you need to add more
+        -# "host" records.  In that case you will also need to make PostgreSQL
+        -# listen on a non-local interface via the listen_addresses
+        -# configuration parameter, or via the -i or -h command line switches.
+        +# TYPE  DATABASE        USER            ADDRESS                 METHOD
+         
+        +###########
+        +# Other authentication configurations taken from chef node defaults:
+        +###########
+         
+        +local   all             postgres                                ident
+         
+        +local   all             all                                     ident
+         
+        -# DO NOT DISABLE!
+        -# If you change this first entry you will need to make sure that the
+        -# database superuser can access the database using some other method.
+        -# Noninteractive access to all databases is required during automatic
+        -# maintenance (custom daily cronjobs, replication, and similar tasks).
+        -#
+        -# Database administrative login by Unix domain socket
+        -local   all             postgres                                peer
+        +host    all             all             127.0.0.1/32            md5
+         
+        -# TYPE  DATABASE        USER            ADDRESS                 METHOD
+        +host    all             all             ::1/128                 md5
+         
+         # "local" is for Unix domain socket connections only
+         local   all             all                                     peer
+        -# IPv4 local connections:
+        -host    all             all             127.0.0.1/32            md5
+        -# IPv6 local connections:
+        -host    all             all             ::1/128                 md5
+        -# Allow replication connections from localhost, by a user with the
+        -# replication privilege.
+        -#local   replication     postgres                                peer
+        -#host    replication     postgres        127.0.0.1/32            md5
+        -#host    replication     postgres        ::1/128                 md5
+    - change mode from '0640' to '0600'
+
+Recipe: postgresql::server_debian
+  * service[postgresql] action reload
+    - reload service service[postgresql]
+
+Recipe: postgresql::server
+  * bash[assign-postgres-password] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-2oz1h3"
+
+Recipe: monit_configs-tlq::postgres
+  * template[/etc/monit/conf.d/postgres.conf] action create
+    - create new file /etc/monit/conf.d/postgres.conf
+    - update content in file /etc/monit/conf.d/postgres.conf from none to f17316
+        --- /etc/monit/conf.d/postgres.conf	2013-11-18 22:16:59.215440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-m1z38j	2013-11-18 22:16:59.215440000 -0500
+        @@ -1 +1,7 @@
+        +#Monitoring Postgres Service
+        +
+        +check process postgresql with pidfile /var/run/postgresql/9.1-main.pid
+        +  start program = "/etc/init.d/postgresql start"
+        +  stop program = "/etc/init.d/postgresql stop"
+        +  if 15 restarts within 15 cycles then timeout
+    - change mode from '' to '0700'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * execute[service monit restart] action run
+    - execute service monit restart
+
+Recipe: rails_gem_dependencies-tlq::default
+  * package[curl] action install (up to date)
+  * package[libcurl3] action install (up to date)
+  * package[libcurl3-dev] action install (up to date)
+  * package[libmagickwand-dev] action install
+    - install version 8:6.6.9.7-5ubuntu3.2 of package libmagickwand-dev
+
+  * package[imagemagick] action install
+    - install version 8:6.6.9.7-5ubuntu3.2 of package imagemagick
+
+Recipe: ruby_build::default
+  * package[tar] action install (up to date)
+  * package[bash] action install (up to date)
+  * package[curl] action install (up to date)
+  * package[git-core] action install (skipped due to not_if)
+  * execute[Install ruby-build] action nothing (skipped due to action :nothing)
+  * directory[/var/chef/cache] action create (up to date)
+  * git[/var/chef/cache/ruby-build] action checkout
+    - clone from https://github.com/sstephenson/ruby-build.git into /var/chef/cache/ruby-build
+    - checkout ref a97cc9165007e42369a0d128b6f92011b3fb1acc branch master
+
+  * execute[Install ruby-build] action run
+    - execute ./install.sh
+
+Recipe: rbenv::system_install
+  * package[git-core] action install
+    - install version 1:1.7.9.5-1 of package git-core
+
+  * package[grep] action install (up to date)
+  * directory[/etc/profile.d] action create (up to date)
+  * template[/etc/profile.d/rbenv.sh] action create
+    - create new file /etc/profile.d/rbenv.sh
+    - update content in file /etc/profile.d/rbenv.sh from none to 1141d7
+        --- /etc/profile.d/rbenv.sh	2013-11-18 22:17:38.535440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-9rduu5	2013-11-18 22:17:38.535440000 -0500
+        @@ -1 +1,16 @@
+        +# Generated by Chef for localhost
+        +# Local modifications will be overridden
+        +
+        +# prefer a user rbenv over a system wide install
+        +if [ -s "${HOME}/.rbenv/bin" ]; then
+        +  rbenv_root="${HOME}/.rbenv"
+        +elif [ -s "/usr/local/rbenv" ]; then
+        +  rbenv_root="/usr/local/rbenv"
+        +  export RBENV_ROOT="$rbenv_root"
+        +fi
+        +
+        +if [ -n "$rbenv_root" ]; then
+        +  export PATH="${rbenv_root}/bin:$PATH"
+        +  eval "$(rbenv init -)"
+        +fi
+    - change mode from '' to '0755'
+    - change owner from '' to 'root'
+
+  * git[/usr/local/rbenv] action checkout
+    - clone from git://github.com/sstephenson/rbenv.git into /usr/local/rbenv
+    - checkout ref 9375e99f921f428849f19efe2a2e500b3295d1a7 branch v0.4.0
+
+  * bash[Initialize rbenv (system)] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-zmwuw"
+
+  * log[rbenv-post-init-system] action write
+
+Recipe: rbenv::system
+  * rbenv_ruby[1.9.3-p286] (system) action install[2013-11-18T22:17:39-05:00] WARN: Cloning resource attributes for package[build-essential] from prior resource (CHEF-3694)
+[2013-11-18T22:17:39-05:00] WARN: Previous package[build-essential]: /home/deploy/chef-solo/cookbooks-2/build-essential/recipes/debian.rb:40:in `block in from_file'
+[2013-11-18T22:17:39-05:00] WARN: Current  package[build-essential]: /home/deploy/chef-solo/cookbooks-2/rbenv/providers/ruby.rb:102:in `block in install_ruby_dependencies'
+Recipe: <Dynamically Defined Resource>
+  * package[build-essential] action install (up to date)
+[2013-11-18T22:17:39-05:00] WARN: Cloning resource attributes for package[bison] from prior resource (CHEF-3694)
+[2013-11-18T22:17:39-05:00] WARN: Previous package[bison]: /home/deploy/chef-solo/cookbooks-2/build-essential/recipes/debian.rb:40:in `block in from_file'
+[2013-11-18T22:17:39-05:00] WARN: Current  package[bison]: /home/deploy/chef-solo/cookbooks-2/rbenv/providers/ruby.rb:102:in `block in install_ruby_dependencies'
+  * package[bison] action install (up to date)
+  * package[openssl] action install (up to date)
+  * package[libreadline6] action install (up to date)
+  * package[libreadline6-dev] action install
+    - install version 6.2-8 of package libreadline6-dev
+
+  * package[zlib1g] action install (up to date)
+  * package[zlib1g-dev] action install (up to date)
+  * package[libssl-dev] action install (up to date)
+  * package[libyaml-dev] action install
+    - install version 0.1.4-2 of package libyaml-dev
+
+  * package[libsqlite3-0] action install (up to date)
+  * package[libsqlite3-dev] action install (up to date)
+  * package[sqlite3] action install (up to date)
+  * package[libxml2-dev] action install (up to date)
+  * package[libxslt1-dev] action install (up to date)
+[2013-11-18T22:17:44-05:00] WARN: Cloning resource attributes for package[autoconf] from prior resource (CHEF-3694)
+[2013-11-18T22:17:44-05:00] WARN: Previous package[autoconf]: /home/deploy/chef-solo/cookbooks-2/build-essential/recipes/debian.rb:40:in `block in from_file'
+[2013-11-18T22:17:44-05:00] WARN: Current  package[autoconf]: /home/deploy/chef-solo/cookbooks-2/rbenv/providers/ruby.rb:102:in `block in install_ruby_dependencies'
+  * package[autoconf] action install (up to date)
+  * package[libc6-dev] action install (up to date)
+  * package[ssl-cert] action install (up to date)
+  * package[subversion] action install
+    - install version 1.6.17dfsg-3ubuntu3.3 of package subversion
+
+  * rbenv_script[rbenv install 1.9.3-p286 (system)] action run
+
+
+
+  * package[build-essential] action nothing (skipped due to action :nothing)
+  * package[bison] action nothing (skipped due to action :nothing)
+  * package[openssl] action nothing (skipped due to action :nothing)
+  * package[libreadline6] action nothing (skipped due to action :nothing)
+  * package[libreadline6-dev] action nothing (skipped due to action :nothing)
+  * package[zlib1g] action nothing (skipped due to action :nothing)
+  * package[zlib1g-dev] action nothing (skipped due to action :nothing)
+  * package[libssl-dev] action nothing (skipped due to action :nothing)
+  * package[libyaml-dev] action nothing (skipped due to action :nothing)
+  * package[libsqlite3-0] action nothing (skipped due to action :nothing)
+  * package[libsqlite3-dev] action nothing (skipped due to action :nothing)
+  * package[sqlite3] action nothing (skipped due to action :nothing)
+  * package[libxml2-dev] action nothing (skipped due to action :nothing)
+  * package[libxslt1-dev] action nothing (skipped due to action :nothing)
+  * package[autoconf] action nothing (skipped due to action :nothing)
+  * package[libc6-dev] action nothing (skipped due to action :nothing)
+  * package[ssl-cert] action nothing (skipped due to action :nothing)
+  * package[subversion] action nothing (skipped due to action :nothing)
+  * rbenv_script[rbenv install 1.9.3-p286 (system)] action nothing (skipped due to action :nothing)
+  * script[rbenv install 1.9.3-p286 (system)] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-1vnz7ov"
+
+Recipe: rbenv::system
+  * rbenv_global[1.9.3-p286] (system) action createRecipe: <Dynamically Defined Resource>
+  * rbenv_script[rbenv global 1.9.3-p286 (system)] action run
+
+
+
+  * rbenv_script[rbenv global 1.9.3-p286 (system)] action nothing (skipped due to action :nothing)
+  * script[rbenv global 1.9.3-p286 (system)] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-1cfxfy5"
+
+Recipe: rbenv::system
+  * rbenv_gem[1.9.2-p320::bundler] (system) action installRecipe: <Dynamically Defined Resource>
+  * rbenv_rehash[rbenv_gem[1.9.2-p320::bundler] (system)] action run  * rbenv_script[rbenv rehash (system)] action run
+
+
+
+
+    - install version 1.3.5 of package bundler
+
+  * rbenv_rehash[rbenv_gem[1.9.2-p320::bundler] (system)] action nothing (skipped due to action :nothing)
+  * rbenv_script[rbenv rehash (system)] action nothing (skipped due to action :nothing)
+  * script[rbenv rehash (system)] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-vhcww7"
+
+Recipe: rbenv::system
+  * rbenv_gem[1.9.3-p286::bundler] (system) action install (up to date)
+Recipe: redis-tlq::default
+  * bash[adding stable redis ppa] action run
+    - execute "bash"  "/tmp/chef-script20131118-14142-176dh76"
+
+  * package[redis-server] action install
+    - install version 2:2.2.12-1build1 of package redis-server
+
+  * template[/etc/redis/redis.conf] action create
+    - update content in file /etc/redis/redis.conf from 81b4f1 to 6f595a
+        --- /etc/redis/redis.conf	2011-07-27 13:26:50.000000000 -0400
+        +++ /tmp/chef-rendered-template20131118-14142-k1qhb4	2013-11-18 22:24:54.927440000 -0500
+        @@ -1,418 +1,40 @@
+        -# Redis configuration file example
+        -
+        -# Note on units: when memory size is needed, it is possible to specifiy
+        -# it in the usual form of 1k 5GB 4M and so forth:
+        -#
+        -# 1k => 1000 bytes
+        -# 1kb => 1024 bytes
+        -# 1m => 1000000 bytes
+        -# 1mb => 1024*1024 bytes
+        -# 1g => 1000000000 bytes
+        -# 1gb => 1024*1024*1024 bytes
+        -#
+        -# units are case insensitive so 1GB 1Gb 1gB are all the same.
+        -
+        -# By default Redis does not run as a daemon. Use 'yes' if you need it.
+        -# Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
+         daemonize yes
+        -
+        -# When running daemonized, Redis writes a pid file in /var/run/redis.pid by
+        -# default. You can specify a custom pid file location here.
+         pidfile /var/run/redis/redis-server.pid
+        +logfile /var/log/redis/redis-server.log
+         
+        -# Accept connections on the specified port, default is 6379.
+        -# If port 0 is specified Redis will not listen on a TCP socket.
+         port 6379
+        -
+        -# If you want you can bind a single interface, if the bind option is not
+        -# specified all the interfaces will listen for incoming connections.
+        -#
+        -bind 127.0.0.1
+        -
+        -# Specify the path for the unix socket that will be used to listen for
+        -# incoming connections. There is no default, so Redis will not listen
+        -# on a unix socket when not specified.
+        -#
+        -# unixsocket /var/run/redis/redis.sock
+        -
+        -# Close the connection after a client is idle for N seconds (0 to disable)
+        +  bind 127.0.0.1
+         timeout 300
+         
+        -# Set server verbosity to 'debug'
+        -# it can be one of:
+        -# debug (a lot of information, useful for development/testing)
+        -# verbose (many rarely useful info, but not a mess like the debug level)
+        -# notice (moderately verbose, what you want in production probably)
+        -# warning (only very important / critical messages are logged)
+         loglevel notice
+         
+        -# Specify the log file name. Also 'stdout' can be used to force
+        -# Redis to log on the standard output. Note that if you use standard
+        -# output for logging but daemonize, logs will be sent to /dev/null
+        -logfile /var/log/redis/redis-server.log
+        -
+        -# To enable logging to the system logger, just set 'syslog-enabled' to yes,
+        -# and optionally update the other syslog parameters to suit your needs.
+        -# syslog-enabled no
+        -
+        -# Specify the syslog identity.
+        -# syslog-ident redis
+        -
+        -# Specify the syslog facility.  Must be USER or between LOCAL0-LOCAL7.
+        -# syslog-facility local0
+        -
+        -# Set the number of databases. The default database is DB 0, you can select
+        -# a different one on a per-connection basis using SELECT <dbid> where
+        -# dbid is a number between 0 and 'databases'-1
+        +## Default configuration options
+         databases 16
+         
+        -################################ SNAPSHOTTING  #################################
+        -#
+        -# Save the DB on disk:
+        -#
+        -#   save <seconds> <changes>
+        -#
+        -#   Will save the DB if both the given number of seconds and the given
+        -#   number of write operations against the DB occurred.
+        -#
+        -#   In the example below the behaviour will be to save:
+        -#   after 900 sec (15 min) if at least 1 key changed
+        -#   after 300 sec (5 min) if at least 10 keys changed
+        -#   after 60 sec if at least 10000 keys changed
+        -#
+        -#   Note: you can disable saving at all commenting all the "save" lines.
+        -
+         save 900 1
+         save 300 10
+         save 60 10000
+         
+        -# Compress string objects using LZF when dump .rdb databases?
+        -# For default that's set to 'yes' as it's almost always a win.
+        -# If you want to save some CPU in the saving child set it to 'no' but
+        -# the dataset will likely be bigger if you have compressible values or keys.
+         rdbcompression yes
+        -
+        -# The filename where to dump the DB
+         dbfilename dump.rdb
+         
+        -# The working directory.
+        -#
+        -# The DB will be written inside this directory, with the filename specified
+        -# above using the 'dbfilename' configuration directive.
+        -# 
+        -# Also the Append Only File will be created inside this directory.
+        -# 
+        -# Note that you must specify a directory here, not a file name.
+        -dir /var/lib/redis
+        -
+        -################################# REPLICATION #################################
+        -
+        -# Master-Slave replication. Use slaveof to make a Redis instance a copy of
+        -# another Redis server. Note that the configuration is local to the slave
+        -# so for example it is possible to configure the slave to save the DB with a
+        -# different interval, or to listen to another port, and so on.
+        -#
+        -# slaveof <masterip> <masterport>
+        -
+        -# If the master is password protected (using the "requirepass" configuration
+        -# directive below) it is possible to tell the slave to authenticate before
+        -# starting the replication synchronization process, otherwise the master will
+        -# refuse the slave request.
+        -#
+        -# masterauth <master-password>
+        -
+        -# When a slave lost the connection with the master, or when the replication
+        -# is still in progress, the slave can act in two different ways:
+        -#
+        -# 1) if slave-serve-stale-data is set to 'yes' (the default) the slave will
+        -#    still reply to client requests, possibly with out of data data, or the
+        -#    data set may just be empty if this is the first synchronization.
+        -#
+        -# 2) if slave-serve-stale data is set to 'no' the slave will reply with
+        -#    an error "SYNC with master in progress" to all the kind of commands
+        -#    but to INFO and SLAVEOF.
+        -#
+        -slave-serve-stale-data yes
+        -
+        -################################## SECURITY ###################################
+        -
+        -# Require clients to issue AUTH <PASSWORD> before processing any other
+        -# commands.  This might be useful in environments in which you do not trust
+        -# others with access to the host running redis-server.
+        -#
+        -# This should stay commented out for backward compatibility and because most
+        -# people do not need auth (e.g. they run their own servers).
+        -# 
+        -# Warning: since Redis is pretty fast an outside user can try up to
+        -# 150k passwords per second against a good box. This means that you should
+        -# use a very strong password otherwise it will be very easy to break.
+        -#
+        -# requirepass foobared
+        -
+        -# Command renaming.
+        -#
+        -# It is possilbe to change the name of dangerous commands in a shared
+        -# environment. For instance the CONFIG command may be renamed into something
+        -# of hard to guess so that it will be still available for internal-use
+        -# tools but not available for general clients.
+        -#
+        -# Example:
+        -#
+        -# rename-command CONFIG b840fc02d524045429941cc15f59e41cb7be6c52
+        -#
+        -# It is also possilbe to completely kill a command renaming it into
+        -# an empty string:
+        -#
+        -# rename-command CONFIG ""
+        -
+        -################################### LIMITS ####################################
+        -
+        -# Set the max number of connected clients at the same time. By default there
+        -# is no limit, and it's up to the number of file descriptors the Redis process
+        -# is able to open. The special value '0' means no limits.
+        -# Once the limit is reached Redis will close all the new connections sending
+        -# an error 'max number of clients reached'.
+        -#
+        -# maxclients 128
+        -
+        -# Don't use more memory than the specified amount of bytes.
+        -# When the memory limit is reached Redis will try to remove keys with an
+        -# EXPIRE set. It will try to start freeing keys that are going to expire
+        -# in little time and preserve keys with a longer time to live.
+        -# Redis will also try to remove objects from free lists if possible.
+        -#
+        -# If all this fails, Redis will start to reply with errors to commands
+        -# that will use more memory, like SET, LPUSH, and so on, and will continue
+        -# to reply to most read-only commands like GET.
+        -#
+        -# WARNING: maxmemory can be a good idea mainly if you want to use Redis as a
+        -# 'state' server or cache, not as a real DB. When Redis is used as a real
+        -# database the memory usage will grow over the weeks, it will be obvious if
+        -# it is going to use too much memory in the long run, and you'll have the time
+        -# to upgrade. With maxmemory after the limit is reached you'll start to get
+        -# errors for write operations, and this may even lead to DB inconsistency.
+        -#
+        -# maxmemory <bytes>
+        -
+        -# MAXMEMORY POLICY: how Redis will select what to remove when maxmemory
+        -# is reached? You can select among five behavior:
+        -# 
+        -# volatile-lru -> remove the key with an expire set using an LRU algorithm
+        -# allkeys-lru -> remove any key accordingly to the LRU algorithm
+        -# volatile-random -> remove a random key with an expire set
+        -# allkeys->random -> remove a random key, any key
+        -# volatile-ttl -> remove the key with the nearest expire time (minor TTL)
+        -# noeviction -> don't expire at all, just return an error on write operations
+        -# 
+        -# Note: with all the kind of policies, Redis will return an error on write
+        -#       operations, when there are not suitable keys for eviction.
+        -#
+        -#       At the date of writing this commands are: set setnx setex append
+        -#       incr decr rpush lpush rpushx lpushx linsert lset rpoplpush sadd
+        -#       sinter sinterstore sunion sunionstore sdiff sdiffstore zadd zincrby
+        -#       zunionstore zinterstore hset hsetnx hmset hincrby incrby decrby
+        -#       getset mset msetnx exec sort
+        -#
+        -# The default is:
+        -#
+        -# maxmemory-policy volatile-lru
+        -
+        -# LRU and minimal TTL algorithms are not precise algorithms but approximated
+        -# algorithms (in order to save memory), so you can select as well the sample
+        -# size to check. For instance for default Redis will check three keys and
+        -# pick the one that was used less recently, you can change the sample size
+        -# using the following configuration directive.
+        -#
+        -# maxmemory-samples 3
+        -
+        -############################## APPEND ONLY MODE ###############################
+        -
+        -# By default Redis asynchronously dumps the dataset on disk. If you can live
+        -# with the idea that the latest records will be lost if something like a crash
+        -# happens this is the preferred way to run Redis. If instead you care a lot
+        -# about your data and don't want to that a single record can get lost you should
+        -# enable the append only mode: when this mode is enabled Redis will append
+        -# every write operation received in the file appendonly.aof. This file will
+        -# be read on startup in order to rebuild the full dataset in memory.
+        -#
+        -# Note that you can have both the async dumps and the append only file if you
+        -# like (you have to comment the "save" statements above to disable the dumps).
+        -# Still if append only mode is enabled Redis will load the data from the
+        -# log file at startup ignoring the dump.rdb file.
+        -#
+        -# IMPORTANT: Check the BGREWRITEAOF to check how to rewrite the append
+        -# log file in background when it gets too big.
+        -
+        +dir /etc/redis/
+         appendonly no
+         
+        -# The name of the append only file (default: "appendonly.aof")
+        -# appendfilename appendonly.aof
+        +glueoutputbuf yes
+         
+        -# The fsync() call tells the Operating System to actually write data on disk
+        -# instead to wait for more data in the output buffer. Some OS will really flush 
+        -# data on disk, some other OS will just try to do it ASAP.
+        -#
+        -# Redis supports three different modes:
+        -#
+        -# no: don't fsync, just let the OS flush the data when it wants. Faster.
+        -# always: fsync after every write to the append only log . Slow, Safest.
+        -# everysec: fsync only if one second passed since the last fsync. Compromise.
+        -#
+        -# The default is "everysec" that's usually the right compromise between
+        -# speed and data safety. It's up to you to understand if you can relax this to
+        -# "no" that will will let the operating system flush the output buffer when
+        -# it wants, for better performances (but if you can live with the idea of
+        -# some data loss consider the default persistence mode that's snapshotting),
+        -# or on the contrary, use "always" that's very slow but a bit safer than
+        -# everysec.
+        -#
+        -# If unsure, use "everysec".
+        +# prevent redis from ever using 400MB of memory
+        +maxmemory 419430400
+         
+        -# appendfsync always
+        -appendfsync everysec
+        -# appendfsync no
+        +# when max memory is reached, go through all keys and delete the
+        +# "least recently used" ones. NOTE: this doesn't do quite what it
+        +# sounds like, in practice Redis takes a random sample of keys
+        +# (see below) and of the sample it takes, deletes the one which was
+        +# least recently used.
+        +maxmemory-policy allkeys-lru
+         
+        -# When the AOF fsync policy is set to always or everysec, and a background
+        -# saving process (a background save or AOF log background rewriting) is
+        -# performing a lot of I/O against the disk, in some Linux configurations
+        -# Redis may block too long on the fsync() call. Note that there is no fix for
+        -# this currently, as even performing fsync in a different thread will block
+        -# our synchronous write(2) call.
+        -#
+        -# In order to mitigate this problem it's possible to use the following option
+        -# that will prevent fsync() from being called in the main process while a
+        -# BGSAVE or BGREWRITEAOF is in progress.
+        -#
+        -# This means that while another child is saving the durability of Redis is
+        -# the same as "appendfsync none", that in pratical terms means that it is
+        -# possible to lost up to 30 seconds of log in the worst scenario (with the
+        -# default Linux settings).
+        -# 
+        -# If you have latency problems turn this to "yes". Otherwise leave it as
+        -# "no" that is the safest pick from the point of view of durability.
+        -no-appendfsync-on-rewrite no
+        -
+        -################################ VIRTUAL MEMORY ###############################
+        -
+        -# Virtual Memory allows Redis to work with datasets bigger than the actual
+        -# amount of RAM needed to hold the whole dataset in memory.
+        -# In order to do so very used keys are taken in memory while the other keys
+        -# are swapped into a swap file, similarly to what operating systems do
+        -# with memory pages.
+        -#
+        -# To enable VM just set 'vm-enabled' to yes, and set the following three
+        -# VM parameters accordingly to your needs.
+        -
+        -vm-enabled no
+        -# vm-enabled yes
+        -
+        -# This is the path of the Redis swap file. As you can guess, swap files
+        -# can't be shared by different Redis instances, so make sure to use a swap
+        -# file for every redis process you are running. Redis will complain if the
+        -# swap file is already in use.
+        -#
+        -# The best kind of storage for the Redis swap file (that's accessed at random) 
+        -# is a Solid State Disk (SSD).
+        -#
+        -# *** WARNING *** if you are using a shared hosting the default of putting
+        -# the swap file under /tmp is not secure. Create a dir with access granted
+        -# only to Redis user and configure Redis to create the swap file there.
+        -vm-swap-file /var/lib/redis/redis.swap
+        -
+        -# vm-max-memory configures the VM to use at max the specified amount of
+        -# RAM. Everything that deos not fit will be swapped on disk *if* possible, that
+        -# is, if there is still enough contiguous space in the swap file.
+        -#
+        -# With vm-max-memory 0 the system will swap everything it can. Not a good
+        -# default, just specify the max amount of RAM you can in bytes, but it's
+        -# better to leave some margin. For instance specify an amount of RAM
+        -# that's more or less between 60 and 80% of your free RAM.
+        -vm-max-memory 0
+        -
+        -# Redis swap files is split into pages. An object can be saved using multiple
+        -# contiguous pages, but pages can't be shared between different objects.
+        -# So if your page is too big, small objects swapped out on disk will waste
+        -# a lot of space. If you page is too small, there is less space in the swap
+        -# file (assuming you configured the same number of total swap file pages).
+        -#
+        -# If you use a lot of small objects, use a page size of 64 or 32 bytes.
+        -# If you use a lot of big objects, use a bigger page size.
+        -# If unsure, use the default :)
+        -vm-page-size 32
+        -
+        -# Number of total memory pages in the swap file.
+        -# Given that the page table (a bitmap of free/used pages) is taken in memory,
+        -# every 8 pages on disk will consume 1 byte of RAM.
+        -#
+        -# The total swap size is vm-page-size * vm-pages
+        -#
+        -# With the default of 32-bytes memory pages and 134217728 pages Redis will
+        -# use a 4 GB swap file, that will use 16 MB of RAM for the page table.
+        -#
+        -# It's better to use the smallest acceptable value for your application,
+        -# but the default is large in order to work in most conditions.
+        -vm-pages 134217728
+        -
+        -# Max number of VM I/O threads running at the same time.
+        -# This threads are used to read/write data from/to swap file, since they
+        -# also encode and decode objects from disk to memory or the reverse, a bigger
+        -# number of threads can help with big objects even if they can't help with
+        -# I/O itself as the physical device may not be able to couple with many
+        -# reads/writes operations at the same time.
+        -#
+        -# The special value of 0 turn off threaded I/O and enables the blocking
+        -# Virtual Memory implementation.
+        -vm-max-threads 4
+        -
+        -############################### ADVANCED CONFIG ###############################
+        -
+        -# Hashes are encoded in a special way (much more memory efficient) when they
+        -# have at max a given numer of elements, and the biggest element does not
+        -# exceed a given threshold. You can configure this limits with the following
+        -# configuration directives.
+        -hash-max-zipmap-entries 512
+        -hash-max-zipmap-value 64
+        -
+        -# Similarly to hashes, small lists are also encoded in a special way in order
+        -# to save a lot of space. The special representation is only used when
+        -# you are under the following limits:
+        -list-max-ziplist-entries 512
+        -list-max-ziplist-value 64
+        -
+        -# Sets have a special encoding in just one case: when a set is composed
+        -# of just strings that happens to be integers in radix 10 in the range
+        -# of 64 bit signed integers.
+        -# The following configuration setting sets the limit in the size of the
+        -# set in order to use this special memory saving encoding.
+        -set-max-intset-entries 512
+        -
+        -# Active rehashing uses 1 millisecond every 100 milliseconds of CPU time in
+        -# order to help rehashing the main Redis hash table (the one mapping top-level
+        -# keys to values). The hash table implementation redis uses (see dict.c)
+        -# performs a lazy rehashing: the more operation you run into an hash table
+        -# that is rhashing, the more rehashing "steps" are performed, so if the
+        -# server is idle the rehashing is never complete and some more memory is used
+        -# by the hash table.
+        -# 
+        -# The default is to use this millisecond 10 times every second in order to
+        -# active rehashing the main dictionaries, freeing memory when possible.
+        -#
+        -# If unsure:
+        -# use "activerehashing no" if you have hard latency requirements and it is
+        -# not a good thing in your environment that Redis can reply form time to time
+        -# to queries with 2 milliseconds delay.
+        -#
+        -# use "activerehashing yes" if you don't have such hard requirements but
+        -# want to free memory asap when possible.
+        -activerehashing yes
+        -
+        -################################## INCLUDES ###################################
+        -
+        -# Include one or more other config files here.  This is useful if you
+        -# have a standard template that goes to all redis server but also need
+        -# to customize a few per-server settings.  Include files can include
+        -# other files, so use this wisely.
+        -#
+        -# include /path/to/local.conf
+        -# include /path/to/other.conf
+        +# when looking for a key to expire on maxmem, randomly pick 10 
+        +# and delete the one with the highest idle time (least recently 
+        +# accessed)
+        +maxmemory-samples 10
+
+  * template[/etc/init.d/redis-server] action create
+    - update content in file /etc/init.d/redis-server from 121c6f to 73b8a3
+        --- /etc/init.d/redis-server	2011-07-27 13:26:50.000000000 -0400
+        +++ /tmp/chef-rendered-template20131118-14142-1a9pwwx	2013-11-18 22:24:54.971440000 -0500
+        @@ -1,14 +1,14 @@
+         #! /bin/sh
+         ### BEGIN INIT INFO
+        -# Provides:		redis-server
+        -# Required-Start:	$syslog $remote_fs
+        -# Required-Stop:	$syslog $remote_fs
+        -# Should-Start:		$local_fs
+        -# Should-Stop:		$local_fs
+        -# Default-Start:	2 3 4 5
+        -# Default-Stop:		0 1 6
+        -# Short-Description:	redis-server - Persistent key-value db
+        -# Description:		redis-server - Persistent key-value db
+        +# Provides:   redis-server
+        +# Required-Start: $syslog $remote_fs
+        +# Required-Stop:  $syslog $remote_fs
+        +# Should-Start:   $local_fs
+        +# Should-Stop:    $local_fs
+        +# Default-Start:  2 3 4 5
+        +# Default-Stop:   0 1 6
+        +# Short-Description:  redis-server - Persistent key-value db
+        +# Description:    redis-server - Persistent key-value db
+         ### END INIT INFO
+         
+         
+        @@ -20,6 +20,8 @@
+         
+         RUNDIR=/var/run/redis
+         PIDFILE=$RUNDIR/redis-server.pid
+        +LOGDIR=/var/log/redis
+        +LOGFILE=$LOGDIR/redis-server.log
+         
+         test -x $DAEMON || exit 0
+         
+        @@ -27,49 +29,53 @@
+         
+         case "$1" in
+           start)
+        -	echo -n "Starting $DESC: "
+        -	mkdir -p $RUNDIR
+        -	touch $PIDFILE
+        -	chown redis:redis $RUNDIR $PIDFILE
+        -	chmod 755 $RUNDIR
+        -	if start-stop-daemon --start --quiet --umask 007 --pidfile $PIDFILE --chuid redis:redis --exec $DAEMON -- $DAEMON_ARGS
+        -	then
+        -		echo "$NAME."
+        -	else
+        -		echo "failed"
+        -	fi
+        -	;;
+        +  echo -n "Starting $DESC: "
+        +  mkdir -p $RUNDIR
+        +  touch $PIDFILE
+        +  chown redis:redis $RUNDIR $PIDFILE
+        +  chmod 755 $RUNDIR
+        +  mkdir -p $LOGDIR
+        +  touch $LOGFILE
+        +  chown redis:redis $LOGDIR $LOGFILE
+        +  chmod 755 $LOGDIR
+        +  if start-stop-daemon --start --quiet --umask 007 --pidfile $PIDFILE --chuid redis:redis --exec $DAEMON -- $DAEMON_ARGS
+        +  then
+        +    echo "$NAME."
+        +  else
+        +    echo "failed"
+        +  fi
+        +  ;;
+           stop)
+        -	echo -n "Stopping $DESC: "
+        -	if start-stop-daemon --stop --retry forever/QUIT/1 --quiet --oknodo --pidfile $PIDFILE --exec $DAEMON
+        -	then
+        -		echo "$NAME."
+        -	else
+        -		echo "failed"
+        -	fi
+        -	rm -f $PIDFILE
+        -	;;
+        +  echo -n "Stopping $DESC: "
+        +  if start-stop-daemon --stop --retry forever/QUIT/1 --quiet --oknodo --pidfile $PIDFILE --exec $DAEMON
+        +  then
+        +    echo "$NAME."
+        +  else
+        +    echo "failed"
+        +  fi
+        +  rm -f $PIDFILE
+        +  ;;
+         
+           restart|force-reload)
+        -	${0} stop
+        -	${0} start
+        -	;;
+        +  ${0} stop
+        +  ${0} start
+        +  ;;
+         
+           status)
+        -	echo -n "$DESC is "
+        -	if start-stop-daemon --stop --quiet --signal 0 --name ${NAME} --pidfile ${PIDFILE}
+        -	then
+        -		echo "running"
+        -	else
+        -		echo "not running"
+        -		exit 1
+        -	fi
+        -	;;
+        +  echo -n "$DESC is "
+        +  if start-stop-daemon --stop --quiet --signal 0 --name ${NAME} --pidfile ${PIDFILE}
+        +  then
+        +    echo "running"
+        +  else
+        +    echo "not running"
+        +    exit 1
+        +  fi
+        +  ;;
+         
+           *)
+        -	echo "Usage: /etc/init.d/$NAME {start|stop|restart|force-reload}" >&2
+        -	exit 1
+        -	;;
+        +  echo "Usage: /etc/init.d/$NAME {start|stop|restart|force-reload}" >&2
+        +  exit 1
+        +  ;;
+         esac
+         
+         exit 0
+
+  * execute[chown redis:redis /etc/redis] action run
+    - execute chown redis:redis /etc/redis
+
+  * execute[/etc/init.d/redis-server restart] action run
+    - execute /etc/init.d/redis-server restart
+
+Recipe: monit_configs-tlq::redis-server
+  * template[/etc/monit/conf.d/redis-server.conf] action create
+    - create new file /etc/monit/conf.d/redis-server.conf
+    - update content in file /etc/monit/conf.d/redis-server.conf from none to 851d4d
+        --- /etc/monit/conf.d/redis-server.conf	2013-11-18 22:24:55.479440000 -0500
+        +++ /tmp/chef-rendered-template20131118-14142-biyeab	2013-11-18 22:24:55.479440000 -0500
+        @@ -1 +1,7 @@
+        +#Monitoring redis
+        +check process redis with pidfile /var/run/redis/redis-server.pid
+        +  group database
+        +  start program = "/etc/init.d/redis-server start"
+        +  stop program = "/etc/init.d/redis-server stop"
+        +  if 15 restarts within 15 cycles then timeout
+    - change mode from '' to '0700'
+    - change owner from '' to 'root'
+    - change group from '' to 'root'
+
+  * execute[service monit restart] action run
+    - execute service monit restart
+
+Chef Client finished, 80 resources updated
+╭╺[ivan][machinecode] (development) ~/Development/flatiron/code/rails-server-template
+╰╺⧉ 
